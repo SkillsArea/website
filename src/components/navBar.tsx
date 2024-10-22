@@ -1,5 +1,5 @@
-'use client'
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { joinHeaderButton, NavBarLinks } from "@/lib/textShown";
@@ -11,15 +11,24 @@ import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "@/lib/animation";
 
 export default function NavBar() {
+  const [lang, setLang] = useState("arabic");
+  useEffect(() => {
+    const Language = sessionStorage.getItem("Lang");
+
+    if (Language) {
+      setLang(Language);
+    }
+  });
   return (
-    <motion.div 
-    initial="initial"
-    whileInView="animate"
-    variants={fadeInAnimationVariants}
-    viewport={{
-      once: true,
-    }}
-    className="w-full flex flex-col items-center py-5 drop-shadow-2xl shadow-black">
+    <motion.div
+      initial="initial"
+      whileInView="animate"
+      variants={fadeInAnimationVariants}
+      viewport={{
+        once: true,
+      }}
+      className="w-full flex flex-col items-center py-5 drop-shadow-2xl shadow-black"
+    >
       <Card className="w-[95%] md:w-[80%] flex mt-4 justify-between p-0 items-center">
         <div className="flex gap-x-6 items-center px-4 py-4">
           <div className="flex gap-x-1 text-[#023477] font-extrabold text-2xl items-center">
@@ -27,7 +36,9 @@ export default function NavBar() {
           </div>
 
           <Button className="!rounded-full bg-[#007AFF] font-arabic text-xl hover:bg-[#023477] drop-shadow-2xl shadow-black">
-            {joinHeaderButton.arabic}
+            {lang === "english"
+              ? joinHeaderButton.english
+              : joinHeaderButton.arabic}
           </Button>
         </div>
         <div className="flex items-center gap-x-9">
@@ -38,7 +49,7 @@ export default function NavBar() {
                 key={index}
                 className="hover:text-[#023477] transition-all font-arabic font-extrabold hover:scale-105 text-nowrap"
               >
-                {link.arabic}
+                {lang === "english" ? link.english : link.arabic}
               </Link>
             ))}
           </div>
