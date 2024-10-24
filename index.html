@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai&display=swap"
+      rel="stylesheet"
+    />
+    <title>SkillArea</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar-container">
+      <div class="navbar-card">
+        <div class="navbar-left">
+          <div class="language-toggle">
+            <p
+              id="lang-icon-english"
+              class="lang-text"
+              style="
+                display: none;
+                font-size: 35px;
+                font-weight: bolder;
+                color: #023477;
+              "
+            >
+              En
+            </p>
+            <p
+              id="lang-icon-arabic"
+              class="lang-text"
+              style="
+                display: inline;
+                font-size: 35px;
+                font-weight: bolder;
+                color: #023477;
+              "
+            >
+              ع
+            </p>
+            <button class="language-toggle-btn" onclick="toggleLanguage()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="30"
+                height="30"
+              >
+                <circle
+                  cx="32"
+                  cy="32"
+                  r="30"
+                  stroke="#023477"
+                  stroke-width="6"
+                  fill="none"
+                />
+                <line
+                  x1="2"
+                  y1="32"
+                  x2="62"
+                  y2="32"
+                  stroke="#023477"
+                  stroke-width="6"
+                />
+                <line
+                  x1="32"
+                  y1="2"
+                  x2="32"
+                  y2="62"
+                  stroke="#023477"
+                  stroke-width="6"
+                />
+                <ellipse
+                  cx="32"
+                  cy="32"
+                  rx="18"
+                  ry="30"
+                  stroke="#023477"
+                  stroke-width="6"
+                  fill="none"
+                />
+              </svg>
+            </button>
+          </div>
+          <button class="join-button">انضم الينا</button>
+        </div>
+
+        <div class="navbar-right">
+          <div class="navbar-links">
+            <a href="/">المدربين</a>
+            <a href="/">برامج الموسم</a>
+            <a href="/">من نحن</a>
+            <a href="/">ورشنا</a>
+          </div>
+          <a href="/" class="logo-link">
+            <img src="img/logo.png" alt="Logo" width="120" height="100" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero section -->
+      <section class="hero">
+        <img src="img/hero.png" alt="Hero Image" class="hero-image" />
+        <div class="hero-description">
+          <p class="hero-main-text">بنتعلم_بطريقة_أفضل</p>
+          <p class="hero-feature">
+            أول منظمة تساعد على توفير منتجات تعليمية مجانية ممتعة ✅
+          </p>
+          <p class="hero-feature">
+            للشباب من سن 11 سنة لفوق 25 سنة في مجالات التكنولوجيا ✅<br />
+            و تطوير الذات
+          </p>
+          <button class="hero-button">سجل في الورش</button>
+        </div>
+      </section>
+
+      <!-- Trainers section -->
+      <section class="trainers">
+        <h1 class="trainers-head">المدربين</h1>
+        <div class="cards-container">
+          <div class="card">
+            <span class="badge">web</span>
+            <div class="circle"></div>
+            <p>م/الاسم المهندس</p>
+            <p>نبذة عنه</p>
+          </div>
+          <div class="card">
+            <span class="badge">web</span>
+            <div class="circle"></div>
+            <p>م/الاسم المهندس</p>
+            <p>نبذة عنه</p>
+          </div>
+          <div class="card">
+            <span class="badge">web</span>
+            <div class="circle"></div>
+            <p>م/الاسم المهندس</p>
+            <p>نبذة عنه</p>
+          </div>
+          <div class="card">
+            <span class="badge">web</span>
+            <div class="circle"></div>
+            <p>م/الاسم المهندس</p>
+            <p>نبذة عنه</p>
+          </div>
+          <div class="card">
+            <span class="badge">web</span>
+            <div class="circle"></div>
+            <p>م/الاسم المهندس</p>
+            <p>نبذة عنه</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
