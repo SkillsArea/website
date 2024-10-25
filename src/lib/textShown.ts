@@ -54,30 +54,12 @@ export const trainersText = {
     english: "Trainers",
   },
   trainers: [
-    {
-      name: "م/ اسم المهندس",
-      description: "نبذة عنه",
-      scale: 0.8,
-    },
-    {
-      name: "م/ اسم المهندس",
-      description: "نبذة عنه",
-      scale: 0.9,
-    },
-    {
-      name: "م/ اسم المهندس",
-      description: "نبذة عنه",
-      scale: 1.1,
-    },
-    {
-      name: "م/ اسم المهندس",
-      description: "نبذة عنه",
-      scale: 0.9,
-    },
-    {
-      name: "م/ اسم المهندس",
-      description: "نبذة عنه",
-      scale: 0.8,
-    },
+    { id: 1, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
+    { id: 2, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
+    { id: 3, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
+    { id: 4, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
+    { id: 5, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
+    { id: 6, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
+    { id: 7, title: "Web", name: "م/ الاسم المهندس", description: "نبذة عنه" },
   ],
 };

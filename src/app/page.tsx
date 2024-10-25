@@ -1,8 +1,6 @@
-import Hero from '@/components/hero';
-import Trainers from '@/components/trainers';
-import { Metadata } from 'next';
-import React from 'react'
-
+import Page from "@/components/page";
+import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "SkillArea",
@@ -10,8 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <main>
-    <Hero />
-    <Trainers />
-  </main>;
+  return (
+    <main>
+      <Page />
+    </main>
+  );
 }

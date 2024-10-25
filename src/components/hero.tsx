@@ -22,9 +22,9 @@ export default function Hero() {
   });
   return (
     <section className={clsx(
-      "w-full flex gap-0 mt-12 px-14 items-center",
+      "w-full flex md:flex-row flex-col gap-0 my-12 px-14 items-center",
       {
-        "flex-row-reverse": lang === "english",
+        "md:flex-row-reverse": lang === "english",
       }
     )}>
       <motion.div
@@ -45,9 +45,9 @@ export default function Hero() {
         viewport={{
           once: true,
         }}
-        className={clsx("flex flex-col w-full lg-[40%]", {"items-end" : lang === "arabic"})}
+        className={clsx("flex flex-col w-full lg-[40%] items-start", {"!items-end" : lang === "arabic"})}
       >
-        <p className={clsx("text-[#007AFF] text-[6rem] font-extrabold mb-6" , {"text-[4rem]" : lang === "english"})}>
+        <p className={clsx("text-[#007AFF] md:text-[6rem] text-[3rem] font-extrabold mb-6" , {"text-[1.9rem] md:text-[3.5rem]" : lang === "english"}, {})}>
           {lang === "english" ? heroText.main.english : heroText.main.arabic}
         </p>
         <p className="text-[#023477] text-xl mb-4">
