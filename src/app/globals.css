@@ -4,6 +4,14 @@
 
 @layer base {
   :root {
-    --radius: 0.5rem}
+    --radius: 0.5rem;
+  }
 }
 
+.font-english {
+  font-family: "Arial Rounded MT Bold";
+}
+
+.font-arabic {
+  font-family: "Almarai";
+}

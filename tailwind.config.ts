@@ -19,8 +19,8 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        arabic: ["Almarai", "sans-serif"],
-		english: ['"Arial Rounded MT Bold"', 'sans-serif'],
+        english: ["Arial Rounded MT Bold"],
+        arabic: ["Almarai"],
       },
     },
   },
