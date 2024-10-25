@@ -47,7 +47,7 @@ export default function Hero() {
         }}
         className={clsx("flex flex-col w-full lg-[40%] items-start", {"!items-end" : lang === "arabic"})}
       >
-        <p className={clsx("text-[#007AFF] md:text-[6rem] text-[3rem] font-extrabold mb-6" , {"text-[1.9rem] md:text-[3.5rem]" : lang === "english"}, {})}>
+        <p className={clsx("text-[#007AFF] md:text-[6rem] text-[3rem] font-extrabold mb-6" , {"text-[1.9rem] md:text-5xl" : lang === "english"})}>
           {lang === "english" ? heroText.main.english : heroText.main.arabic}
         </p>
         <p className="text-[#023477] text-xl mb-4">
@@ -60,7 +60,7 @@ export default function Hero() {
             ? heroText.feature2.english
             : heroText.feature2.arabic}
         </p>
-        <Button className={clsx("!rounded-full bg-[#007AFF] font-arabic text-xl font-extrabold hover:bg-[#023477] drop-shadow-2xl shadow-black w-[8rem]", {"!text-sm" : lang === "english"})}>
+        <Button className={clsx("!rounded-full bg-[#007AFF] font-arabic text-xl font-extrabold hover:bg-[#023477] drop-shadow-2xl shadow-black w-[10rem]", {"!text-sm w-[6rem]" : lang === "english"})}>
           {lang === "english"
             ? heroText.button.english
             : heroText.button.arabic}
