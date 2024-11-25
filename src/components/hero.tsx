@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import hero from "../../public/img/hero.png";
 import { heroText } from "@/lib/textShown";
 import { Button } from "./ui/button";
@@ -10,23 +10,20 @@ import {
   fadeInAnimationVariantsDiv2,
 } from "@/lib/animation";
 import clsx from "clsx";
+import { useLanguage } from "@/context/language-context";
 
 export default function Hero() {
-  const [lang, setLang] = useState("arabic");
-  useEffect(() => {
-    const Language = sessionStorage.getItem("Lang");
+  const { language } = useLanguage();
 
-    if (Language) {
-      setLang(Language);
-    }
-  });
   return (
-    <section className={clsx(
-      "w-full flex md:flex-row flex-col gap-0 my-12 px-14 items-center",
-      {
-        "md:flex-row-reverse": lang === "english",
-      }
-    )}>
+    <section
+      className={clsx(
+        "w-full flex md:flex-row flex-col gap-0 my-12 px-14 items-center",
+        {
+          "md:flex-row-reverse": language === "En",
+        }
+      )}
+    >
       <motion.div
         initial="initial"
         whileInView="animate"
@@ -45,25 +42,35 @@ export default function Hero() {
         viewport={{
           once: true,
         }}
-        className={clsx("flex flex-col w-full lg-[40%] items-start", {"!items-end" : lang === "arabic"})}
+        className={clsx("flex flex-col w-full lg-[40%] items-start", {
+          "!items-end": language === "ع",
+        })}
       >
-        <p className={clsx("text-[#007AFF] md:text-[6rem] text-[3rem] font-extrabold mb-6" , {"text-[1.9rem] md:text-5xl" : lang === "english"})}>
-          {lang === "english" ? heroText.main.english : heroText.main.arabic}
+        <p
+          className={clsx(
+            "text-[#007AFF] md:text-[6rem] text-[3rem] font-extrabold mb-6 text-shadow-default",
+            { "!text-[1.9rem] !md:text-[4.6rem]": language === "En" }
+          )}
+        >
+          {language === "En" ? heroText.main.english : heroText.main.arabic}
         </p>
         <p className="text-[#023477] text-xl mb-4">
-          {lang === "english"
+          {language === "En"
             ? heroText.feature1.english
             : heroText.feature1.arabic}
         </p>
         <p className="text-[#023477] text-xl mb-8">
-          {lang === "english"
+          {language === "En"
             ? heroText.feature2.english
             : heroText.feature2.arabic}
         </p>
-        <Button className={clsx("!rounded-full bg-[#007AFF] font-arabic text-xl font-extrabold hover:bg-[#023477] drop-shadow-2xl shadow-black w-[10rem]", {"!text-sm w-[6rem]" : lang === "english"})}>
-          {lang === "english"
-            ? heroText.button.english
-            : heroText.button.arabic}
+        <Button
+          className={clsx(
+            "!rounded-full bg-[#007AFF] font-arabic text-xl font-extrabold hover:bg-[#023477] drop-shadow-2xl shadow-black w-[10rem]",
+            { "!text-sm !w-[6rem]": language === "En" }
+          )}
+        >
+          {language === "En" ? heroText.button.english : heroText.button.arabic}
         </Button>
       </motion.div>
     </section>

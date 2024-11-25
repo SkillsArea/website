@@ -17,7 +17,7 @@ export default function SectionHeader({ text }: Props) {
         viewport={{
           once: true,
         }}
-        className="text-6xl text-[#023477] text-center font-arabic font-extrabold"
+        className="text-6xl text-[#023477] text-center font-extrabold text-shadow-default"
       >
         {text}
       </motion.h1>

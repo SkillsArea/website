@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { joinHeaderButton, NavBarLinks } from "@/lib/textShown";
@@ -9,16 +9,11 @@ import Link from "next/link";
 import ToggleLanguage from "./toggleLanguage";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "@/lib/animation";
+import { useLanguage } from "@/context/language-context";
 
 export default function NavBar() {
-  const [lang, setLang] = useState("arabic");
-  useEffect(() => {
-    const Language = sessionStorage.getItem("Lang");
+  const { language } = useLanguage();
 
-    if (Language) {
-      setLang(Language);
-    }
-  });
   return (
     <motion.div
       initial="initial"
@@ -36,7 +31,7 @@ export default function NavBar() {
           </div>
 
           <Button className="!rounded-full bg-[#007AFF] font-arabic text-xl hover:bg-[#023477] drop-shadow-2xl shadow-black">
-            {lang === "english"
+            {language === "En"
               ? joinHeaderButton.english
               : joinHeaderButton.arabic}
           </Button>
@@ -49,7 +44,7 @@ export default function NavBar() {
                 key={index}
                 className="hover:text-[#023477] transition-all font-arabic font-extrabold hover:scale-105 text-nowrap"
               >
-                {lang === "english" ? link.english : link.arabic}
+                {language === "En" ? link.english : link.arabic}
               </Link>
             ))}
           </div>

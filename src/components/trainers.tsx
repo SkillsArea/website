@@ -1,30 +1,47 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionHeader from "./sectionHeader";
 import { trainersText } from "@/lib/textShown";
 import EngineerCards from "./engineerCards";
+import { useLanguage } from "@/context/language-context";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/animation";
+import Results from "./results";
 
 export default function Trainers() {
-  const [lang, setLang] = useState("arabic");
-  useEffect(() => {
-    const Language = sessionStorage.getItem("Lang");
+  const { language } = useLanguage();
 
-    if (Language) {
-      setLang(Language);
-    }
-  });
   return (
-    <section className="w-full flex flex-col items-center gap-3">
+    <section className="w-full flex flex-col items-center gap-3" id="trainers">
       <SectionHeader
         text={
-          lang === "english"
+          language === "En"
             ? trainersText.heading.english
             : trainersText.heading.arabic
         }
       />
-      <div className="w-full overflow-hidden">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        variants={fadeInAnimationVariants}
+        viewport={{
+          once: true,
+        }}
+        className="w-full overflow-hidden"
+      >
         <EngineerCards />
-      </div>
+      </motion.div>
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        variants={fadeInAnimationVariants}
+        viewport={{
+          once: true,
+        }}
+        className="w-full flex flex-col items-center mt-4"
+      >
+        <Results />
+      </motion.div>
     </section>
   );
 }
