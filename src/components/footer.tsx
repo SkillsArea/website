@@ -11,6 +11,7 @@ import linkedin from "../../public/img/linkedin.png";
 import whatsapp from "../../public/img/whatsapp.png";
 import Link from "next/link";
 import clsx from "clsx";
+import { getText } from "@/lib/utils";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -36,9 +37,7 @@ export default function Footer() {
       </Link>
 
       <div className="flex flex-col gap-2 items-center">
-        <p className="text-3xl">
-          {language === "En" ? links.contact.english : links.contact.arabic}
-        </p>
+        <p className="text-3xl">{getText(links.contact, language)}</p>
         <div className="flex gap-x-2">
           <Link href={""}>
             {" "}
@@ -93,7 +92,7 @@ export default function Footer() {
               { "text-right": language === "ع" }
             )}
           >
-            {language === "En" ? link.english : link.arabic}
+            {getText(link, language)}
           </Link>
         ))}
       </div>

@@ -11,6 +11,7 @@ import {
   fadeInAnimationVariantsDiv1,
   fadeInAnimationVariantsDiv2,
 } from "@/lib/animation";
+import { getText } from "@/lib/utils";
 
 export default function Rd3SeasonPrograms() {
   const { language } = useLanguage();
@@ -79,21 +80,11 @@ export default function Rd3SeasonPrograms() {
                   className="rounded-full"
                 />
                 <p className="!text-[#023477] font-extrabold !text-[3rem]">
-                  {language === "En"
-                    ? program.texts.heading.english
-                    : program.texts.heading.arabic}
+                  {getText(program.texts.heading, language)}
                 </p>
               </div>
-              <p>
-                {language === "En"
-                  ? program.texts.legend.english
-                  : program.texts.legend.arabic}
-              </p>
-              <p>
-                {language === "En"
-                  ? program.texts.descreption.english
-                  : program.texts.descreption.arabic}
-              </p>
+              <p>{getText(program.texts.legend, language)}</p>
+              <p>{getText(program.texts.descreption, language)}</p>
             </motion.div>
             <motion.div
               initial="initial"

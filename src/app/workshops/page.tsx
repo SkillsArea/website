@@ -9,6 +9,9 @@ import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
 import NavBar from "@/components/navBar";
 import clsx from "clsx";
+import Link from "next/link";
+import { website } from "@/lib/constants";
+import { getText } from "@/lib/utils";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -65,15 +68,9 @@ export default function Page() {
                   })}
                 >
                   <p className="font-bold">
-                    {language === "En"
-                      ? workshopsPgae.deadline.english
-                      : workshopsPgae.deadline.arabic}
+                    {getText(workshopsPgae.deadline, language)}
                   </p>
-                  <p>
-                    {language === "En"
-                      ? workshop.deadline.english
-                      : workshop.deadline.arabic}
-                  </p>
+                  <p>{getText(workshop.deadline, language)}</p>
                 </div>
                 <div
                   className={clsx("flex gap-2", {
@@ -81,15 +78,9 @@ export default function Page() {
                   })}
                 >
                   <p className="font-bold">
-                    {language === "En"
-                      ? workshopsPgae.cost.english
-                      : workshopsPgae.cost.arabic}
+                    {getText(workshopsPgae.cost, language)}
                   </p>
-                  <p>
-                    {language === "En"
-                      ? workshop.cost.english
-                      : workshop.cost.arabic}
-                  </p>
+                  <p>{getText(workshop.cost, language)}</p>
                 </div>
                 <div
                   className={clsx("flex gap-2", {
@@ -97,15 +88,9 @@ export default function Page() {
                   })}
                 >
                   <p className="font-bold">
-                    {language === "En"
-                      ? workshopsPgae.features.english
-                      : workshopsPgae.features.arabic}
+                    {getText(workshopsPgae.features, language)}
                   </p>
-                  <p>
-                    {language === "En"
-                      ? workshop.features.english
-                      : workshop.features.arabic}
-                  </p>
+                  <p>{getText(workshop.features, language)}</p>
                 </div>
                 <div
                   className={clsx("flex gap-2", {
@@ -113,29 +98,22 @@ export default function Page() {
                   })}
                 >
                   <p className="font-bold">
-                    {language === "En"
-                      ? workshopsPgae.location.english
-                      : workshopsPgae.location.arabic}
+                    {getText(workshopsPgae.location, language)}
                   </p>
-                  <p>
-                    {language === "En"
-                      ? workshop.location.english
-                      : workshop.location.arabic}
-                  </p>
+                  <p>{getText(workshop.location, language)}</p>
                 </div>
               </div>
               <div className="w-full flex flex-col items-center">
-                <Button
-                  className={clsx(
-                    "!rounded-full bg-[#007AFF] font-arabic text-xl font-extrabold hover:bg-[#023477] drop-shadow-2xl shadow-black w-[10rem]",
-                    { "!text-sm !w-[6rem]": language === "En" }
-                  )}
-                >
-                  {" "}
-                  {language === "En"
-                    ? workshopsPgae.button.english
-                    : workshopsPgae.button.arabic}
-                </Button>
+                <Link href={`${website}/join/${workshop.name}`}>
+                  <Button
+                    className={clsx(
+                      "!rounded-full bg-[#007AFF] font-arabic text-xl font-extrabold hover:bg-[#023477] drop-shadow-2xl shadow-black w-[10rem]",
+                      { "!text-sm !w-[6rem]": language === "En" }
+                    )}
+                  >
+                    {getText(workshopsPgae.button, language)}
+                  </Button>
+                </Link>
               </div>
             </Card>
           </motion.div>

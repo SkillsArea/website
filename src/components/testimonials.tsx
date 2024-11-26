@@ -14,6 +14,7 @@ import { testimonialsSection } from "@/lib/textShown";
 import { useLanguage } from "@/context/language-context";
 import clsx from "clsx";
 import { fadeInAnimationVariants } from "@/lib/animation";
+import { getText } from "@/lib/utils";
 
 export function Testimonials() {
   const { language } = useLanguage();
@@ -28,13 +29,7 @@ export function Testimonials() {
       }}
       className="w-full flex flex-col items-center mt-[5rem]"
     >
-      <SectionHeader
-        text={
-          language === "En"
-            ? testimonialsSection.heading.english
-            : testimonialsSection.heading.arabic
-        }
-      />
+      <SectionHeader text={getText(testimonialsSection.heading, language)} />
       <Carousel
         opts={{
           align: "start",
@@ -53,9 +48,7 @@ export function Testimonials() {
                     )}
                   >
                     <span className="text-3xl font-semibold">
-                      {language === "En"
-                        ? testimonial.english
-                        : testimonial.arabic}
+                      {getText(testimonial, language)}
                     </span>
                   </CardContent>
                 </Card>

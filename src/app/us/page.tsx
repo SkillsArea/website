@@ -14,6 +14,7 @@ import {
   fadeInAnimationVariantsDiv2,
 } from "@/lib/animation";
 import { us } from "@/lib/textShown";
+import { getText } from "@/lib/utils";
 
 export default function Page() {
   const { language } = useLanguage();
@@ -59,10 +60,10 @@ export default function Page() {
           }}
         >
           <h1 className="text-[6rem] font-extrabold text-[#007AFF] mb-4">
-            {language === "En" ? us.heading.english : us.heading.arabic}
+            {getText(us.heading, language)}
           </h1>
           <p className="text-[1.5rem] font-extrabold text-[#023477] mb-4">
-            {language === "En" ? us.description.english : us.description.arabic}
+            {getText(us.description, language)}
           </p>
         </motion.div>
         <motion.div

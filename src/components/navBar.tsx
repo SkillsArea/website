@@ -10,6 +10,7 @@ import ToggleLanguage from "./toggleLanguage";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "@/lib/animation";
 import { useLanguage } from "@/context/language-context";
+import { getText } from "@/lib/utils";
 
 export default function NavBar() {
   const { language } = useLanguage();
@@ -31,9 +32,7 @@ export default function NavBar() {
           </div>
 
           <Button className="!rounded-full bg-[#007AFF] font-arabic text-xl hover:bg-[#023477] drop-shadow-2xl shadow-black">
-            {language === "En"
-              ? joinHeaderButton.english
-              : joinHeaderButton.arabic}
+            {getText(joinHeaderButton, language)}
           </Button>
         </div>
         <div className="flex items-center gap-x-9">
@@ -44,7 +43,7 @@ export default function NavBar() {
                 key={index}
                 className="hover:text-[#023477] transition-all font-arabic font-extrabold hover:scale-105 text-nowrap"
               >
-                {language === "En" ? link.english : link.arabic}
+                {getText(link, language)}
               </Link>
             ))}
           </div>

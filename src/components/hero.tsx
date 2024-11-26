@@ -11,6 +11,7 @@ import {
 } from "@/lib/animation";
 import clsx from "clsx";
 import { useLanguage } from "@/context/language-context";
+import { getText } from "@/lib/utils";
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -52,17 +53,13 @@ export default function Hero() {
             { "!text-[1.9rem] !md:text-[4.6rem]": language === "En" }
           )}
         >
-          {language === "En" ? heroText.main.english : heroText.main.arabic}
+          {getText(heroText.main, language)}
         </p>
         <p className="text-[#023477] text-xl mb-4">
-          {language === "En"
-            ? heroText.feature1.english
-            : heroText.feature1.arabic}
+          {getText(heroText.feature1, language)}
         </p>
         <p className="text-[#023477] text-xl mb-8">
-          {language === "En"
-            ? heroText.feature2.english
-            : heroText.feature2.arabic}
+          {getText(heroText.feature2, language)}
         </p>
         <Button
           className={clsx(
@@ -70,7 +67,7 @@ export default function Hero() {
             { "!text-sm !w-[6rem]": language === "En" }
           )}
         >
-          {language === "En" ? heroText.button.english : heroText.button.arabic}
+          {getText(heroText.button, language)}
         </Button>
       </motion.div>
     </section>

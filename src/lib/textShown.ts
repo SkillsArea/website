@@ -6,13 +6,12 @@ import podcast from "../../public/img/podcast.jpg";
 import roaa from "../../public/img/roaa.png";
 import frontEnd from "../../public/img/frontendcourse.jpg";
 import flutter from "../../public/img/flutterProgram.jpg";
+import { website } from "./constants";
 
 export const joinHeaderButton = {
   arabic: "انضم الينا",
   english: "Join Us",
 };
-
-const website = "http://localhost:3000";
 
 export const NavBarLinks = [
   {
@@ -242,6 +241,7 @@ export const workshopsPgae = {
   workshops: [
     {
       banner: flutter,
+      name: "Flutter",
       deadline: {
         arabic: "الاثنين الساعة 10 مساءا 🚨",
         english: "Monday 10pm 🚨",
@@ -262,6 +262,7 @@ export const workshopsPgae = {
     },
     {
       banner: frontEnd,
+      name: "frontEnd",
       deadline: {
         arabic: "الأربعاء القادم الساعة 9:30 مساءا",
         english: "Next Wednesday at 9:30 pm",
